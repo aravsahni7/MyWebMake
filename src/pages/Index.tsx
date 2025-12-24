@@ -1,13 +1,48 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Layout from "@/components/layout/Layout";
+import HeroSection from "@/components/home/HeroSection";
+import WhatWeBuildSection from "@/components/home/WhatWeBuildSection";
+import BenefitsSection from "@/components/home/BenefitsSection";
+import IncludedSection from "@/components/home/IncludedSection";
+import WorkHighlightsSection from "@/components/home/WorkHighlightsSection";
+import HowItWorksSection from "@/components/home/HowItWorksSection";
+import HowQuotesWorkSection from "@/components/home/HowQuotesWorkSection";
+import FoundingClientSection from "@/components/home/FoundingClientSection";
+import HomeFAQSection from "@/components/home/HomeFAQSection";
+import ContactMiniSection from "@/components/home/ContactMiniSection";
+import CTASection from "@/components/shared/CTASection";
+import LeadMagnetPopup from "@/components/shared/LeadMagnetPopup";
+import { Helmet } from "react-helmet-async";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <>
+      <Helmet>
+        <title>NorthPeak Websites | Modern Websites for Small Businesses in Montreal</title>
+        <meta name="description" content="We build high-converting, mobile-first websites for small businesses. SEO-ready, fast loading, and designed to generate leads. Based in Montreal, serving Canada." />
+        <meta property="og:title" content="NorthPeak Websites | Built to Rank. Built to Sell." />
+        <meta property="og:description" content="Modern websites for small businesses that want to be found online and turn visitors into customers." />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://northpeakwebsites.com" />
+      </Helmet>
+      
+      <Layout>
+        <HeroSection />
+        <WhatWeBuildSection />
+        <BenefitsSection />
+        <IncludedSection />
+        <WorkHighlightsSection />
+        <HowItWorksSection />
+        <HowQuotesWorkSection />
+        <FoundingClientSection />
+        <HomeFAQSection />
+        <ContactMiniSection />
+        <CTASection 
+          title="Ready to Build Your Online Presence?"
+          subtitle="Let's create a website that makes your business shine. Book a free call and let's get started."
+        />
+        <LeadMagnetPopup />
+      </Layout>
+    </>
   );
 };
 
