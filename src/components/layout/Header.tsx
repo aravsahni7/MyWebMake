@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone, Calendar } from "lucide-react";
+import { Menu, X, Calendar } from "lucide-react";
 import { siteConfig, navigation } from "@/data/siteData";
 import { motion, AnimatePresence } from "framer-motion";
+
+// ✅ Import the logo from src/assets (fixes production)
+import logoImg from "@/assets/ChatGPT Image Dec 24, 2025, 08_00_51 AM.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -11,9 +14,7 @@ const Header = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -38,14 +39,15 @@ const Header = () => {
           <Link to="/" className="flex items-center gap-2">
             <div className="flex items-center gap-2">
               <div
-                className={`w-8 h-8 md:w-10 md:h-10 rounded-lg flex items-center justify-center ${
+                className={`w-8 h-8 md:w-10 md:h-10 rounded-lg flex items-center justify-center overflow-hidden ${
                   isScrolled ? "bg-accent" : "bg-white"
                 }`}
               >
                 <img
-                  src="/src/assets/ChatGPT Image Dec 24, 2025, 08_00_51 AM.png"
-                  alt="Logo"
-                  className="w-full h-full object-cover rounded-lg"
+                  src={logoImg}
+                  alt="MyWebMake Websites logo"
+                  className="w-full h-full object-cover"
+                  loading="eager"
                 />
               </div>
               <div className="flex flex-col">
@@ -62,7 +64,7 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
             {navigation
-              .filter((item) => item.name !== "Blog") // Remove "Blog" button
+              .filter((item) => item.name !== "Blog")
               .map((item) => (
                 <Link
                   key={item.name}
@@ -90,10 +92,9 @@ const Header = () => {
                 isScrolled ? "text-foreground" : "text-white"
               }`}
             >
-              <Link to="/quote">
-                {siteConfig.ctas.secondary}
-              </Link>
+              <Link to="/quote">{siteConfig.ctas.secondary}</Link>
             </Button>
+
             <Button
               variant="accent"
               size="sm"
@@ -137,7 +138,7 @@ const Header = () => {
             <div className="container-wide py-4 space-y-4">
               <nav className="flex flex-col gap-1">
                 {navigation
-                  .filter((item) => item.name !== "Blog") // Remove "Blog" button
+                  .filter((item) => item.name !== "Blog")
                   .map((item) => (
                     <Link
                       key={item.name}
@@ -154,6 +155,7 @@ const Header = () => {
                     </Link>
                   ))}
               </nav>
+
               <div className="flex flex-col gap-2 pt-2 border-t border-border">
                 <Button
                   variant="outline"
@@ -162,17 +164,10 @@ const Header = () => {
                     isScrolled ? "text-foreground" : "text-white"
                   }`}
                 >
-                  <Link to="/quote">
-                    {siteConfig.ctas.secondary}
-                  </Link>
+                  <Link to="/quote">{siteConfig.ctas.secondary}</Link>
                 </Button>
-                <Button
-                  variant="accent"
-                  asChild
-                  className={`w-full justify-center transition-colors ${
-                    isScrolled ? "text-foreground" : "text-white"
-                  }`}
-                >
+
+                <Button variant="accent" asChild className="w-full justify-center">
                   <a href={siteConfig.bookingUrl} target="_blank" rel="noopener noreferrer">
                     <Calendar className="w-4 h-4" />
                     {siteConfig.ctas.primary}
