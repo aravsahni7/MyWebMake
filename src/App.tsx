@@ -15,7 +15,7 @@ import Quote from "./pages/Quote";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
-import ScrollToTop from "./components/ScrollToTop"; // Import ScrollToTop
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -25,8 +25,10 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
-          <ScrollToTop /> {/* Add ScrollToTop here */}
+
+        {/* ✅ GitHub Pages project site basename */}
+        <BrowserRouter basename="/MyWebMake">
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/services" element={<Services />} />
