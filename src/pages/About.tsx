@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import { teamMembers, companyValues, siteConfig } from "@/data/siteData";
 import CTASection from "@/components/shared/CTASection";
 import { Helmet } from "react-helmet-async";
-import founderImage from "@/assets/founder-arav.jpg";
+import founderImage from "@/assets/image.png";
 
 const About = () => (
   <>
     <Helmet>
-      <title>About Us | NorthPeak Websites</title>
-      <meta name="description" content="Meet the team behind NorthPeak Websites. We build modern, high-converting websites for small businesses in Montreal and across Canada." />
+      <title>About Us | MyWebMake Websites</title>
+      <meta name="description" content="Meet the team behind MyWebMake Websites. We build modern, high-converting websites for small businesses in Montreal and across Canada." />
     </Helmet>
     <Layout>
       <section className="pt-32 pb-16 bg-primary text-primary-foreground">
@@ -27,7 +27,7 @@ const About = () => (
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <h2 className="font-heading text-3xl font-bold mb-4">Hi, I'm Arav.</h2>
               <p className="text-muted-foreground mb-4">I build clean, modern websites for small businesses so you can be found online and get more calls and bookings. Based in Montreal, I work with clients across Canada to create websites that actually work.</p>
-              <p className="text-muted-foreground mb-4">I started NorthPeak Websites because I saw too many small businesses struggling with outdated websites that don't generate leads. You deserve better—a site that looks professional, loads fast, and helps you grow.</p>
+              <p className="text-muted-foreground mb-4">I started MyWebMake Websites because I saw too many small businesses struggling with outdated websites that don't generate leads. You deserve better—a site that looks professional, loads fast, and helps you grow.</p>
               <p className="text-muted-foreground">Let's build something great together.</p>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative">

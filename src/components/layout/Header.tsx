@@ -28,8 +28,8 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-card/95 backdrop-blur-lg shadow-lg border-b border-border"
-          : "bg-transparent"
+          ? "bg-card/95 backdrop-blur-lg shadow-lg border-b border-border text-foreground"
+          : "bg-transparent text-white"
       }`}
     >
       <div className="container-wide">
@@ -37,14 +37,22 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-accent flex items-center justify-center">
-                <span className="text-accent-foreground font-heading font-bold text-lg md:text-xl">N</span>
+              <div
+                className={`w-8 h-8 md:w-10 md:h-10 rounded-lg flex items-center justify-center ${
+                  isScrolled ? "bg-accent" : "bg-white"
+                }`}
+              >
+                <img
+                  src="/src/assets/ChatGPT Image Dec 24, 2025, 08_00_51 AM.png"
+                  alt="Logo"
+                  className="w-full h-full object-cover rounded-lg"
+                />
               </div>
               <div className="flex flex-col">
-                <span className="font-heading font-bold text-base md:text-lg text-foreground leading-tight">
-                  NorthPeak
+                <span className="font-heading font-bold text-base md:text-lg leading-tight">
+                  MyWebMake
                 </span>
-                <span className="text-[10px] md:text-xs text-muted-foreground font-medium -mt-0.5 hidden sm:block">
+                <span className="text-[10px] md:text-xs font-medium -mt-0.5 hidden sm:block">
                   Websites
                 </span>
               </div>
@@ -53,29 +61,47 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  isActive(item.href)
-                    ? "text-accent bg-accent/10"
-                    : "text-foreground hover:text-accent hover:bg-muted"
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navigation
+              .filter((item) => item.name !== "Blog") // Remove "Blog" button
+              .map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    isActive(item.href)
+                      ? "text-accent bg-accent/10"
+                      : isScrolled
+                      ? "text-foreground hover:text-accent hover:bg-muted"
+                      : "text-white hover:text-accent hover:bg-muted"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
           </nav>
 
           {/* Desktop CTAs */}
           <div className="hidden lg:flex items-center gap-3">
-            <Button variant="outline" size="sm" asChild>
+            <Button
+              variant="outline"
+              size="sm"
+              asChild
+              className={`transition-colors ${
+                isScrolled ? "text-foreground" : "text-white"
+              }`}
+            >
               <Link to="/quote">
                 {siteConfig.ctas.secondary}
               </Link>
             </Button>
-            <Button variant="accent" size="sm" asChild>
+            <Button
+              variant="accent"
+              size="sm"
+              asChild
+              className={`transition-colors ${
+                isScrolled ? "text-foreground" : "text-white"
+              }`}
+            >
               <a href={siteConfig.bookingUrl} target="_blank" rel="noopener noreferrer">
                 <Calendar className="w-4 h-4" />
                 {siteConfig.ctas.primary}
@@ -110,27 +136,43 @@ const Header = () => {
           >
             <div className="container-wide py-4 space-y-4">
               <nav className="flex flex-col gap-1">
-                {navigation.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className={`px-4 py-3 rounded-lg text-base font-medium transition-colors ${
-                      isActive(item.href)
-                        ? "text-accent bg-accent/10"
-                        : "text-foreground hover:text-accent hover:bg-muted"
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
+                {navigation
+                  .filter((item) => item.name !== "Blog") // Remove "Blog" button
+                  .map((item) => (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      className={`px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+                        isActive(item.href)
+                          ? "text-accent bg-accent/10"
+                          : isScrolled
+                          ? "text-foreground hover:text-accent hover:bg-muted"
+                          : "text-white hover:text-accent hover:bg-muted"
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
               </nav>
               <div className="flex flex-col gap-2 pt-2 border-t border-border">
-                <Button variant="outline" asChild className="w-full justify-center">
+                <Button
+                  variant="outline"
+                  asChild
+                  className={`w-full justify-center transition-colors ${
+                    isScrolled ? "text-foreground" : "text-white"
+                  }`}
+                >
                   <Link to="/quote">
                     {siteConfig.ctas.secondary}
                   </Link>
                 </Button>
-                <Button variant="accent" asChild className="w-full justify-center">
+                <Button
+                  variant="accent"
+                  asChild
+                  className={`w-full justify-center transition-colors ${
+                    isScrolled ? "text-foreground" : "text-white"
+                  }`}
+                >
                   <a href={siteConfig.bookingUrl} target="_blank" rel="noopener noreferrer">
                     <Calendar className="w-4 h-4" />
                     {siteConfig.ctas.primary}

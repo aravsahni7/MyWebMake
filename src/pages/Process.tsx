@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet-async";
 const Process = () => (
   <>
     <Helmet>
-      <title>Our Process | NorthPeak Websites</title>
+      <title>Our Process | MyWebMake Websites</title>
       <meta name="description" content="Our simple 7-step process from discovery call to launch. See exactly how we work with you to build your website." />
     </Helmet>
     <Layout>

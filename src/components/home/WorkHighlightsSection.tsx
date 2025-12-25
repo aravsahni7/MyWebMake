@@ -4,61 +4,25 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
 import SectionHeader from "@/components/shared/SectionHeader";
-import demoBarbershop from "@/assets/demo-barbershop.jpg";
-import demoDental from "@/assets/demo-dental.jpg";
-import demoContractor from "@/assets/demo-contractor.jpg";
-import demoFitness from "@/assets/demo-fitness.jpg";
 import demoRestaurant from "@/assets/demo-restaurant.jpg";
-import demoRealestate from "@/assets/demo-realestate.jpg";
+import demoFitness from "@/assets/demo-fitness.jpg";
 
 const demoProjects = [
   {
-    id: "modern-barbershop",
-    title: "Urban Cuts Barbershop",
-    industry: "Barber",
-    description: "Bold, modern design with online booking integration",
-    designedFor: "Bookings & brand presence",
-    image: demoBarbershop,
-  },
-  {
-    id: "dental-clinic",
-    title: "Bright Smile Dental",
-    industry: "Dental",
-    description: "Clean, trustworthy design for healthcare",
-    designedFor: "Patient trust & appointments",
-    image: demoDental,
-  },
-  {
-    id: "contractor-site",
-    title: "Summit Renovations",
-    industry: "Contractor",
-    description: "Professional contractor website with project gallery",
-    designedFor: "Quote generation",
-    image: demoContractor,
-  },
-  {
-    id: "fitness-studio",
-    title: "Core Fitness Studio",
-    industry: "Fitness",
-    description: "Energetic design with class schedules",
-    designedFor: "Memberships & bookings",
-    image: demoFitness,
-  },
-  {
     id: "restaurant-landing",
-    title: "Maple Bistro",
+    title: "Gourmet Haven",
     industry: "Restaurant",
-    description: "Appetizing design with menu showcase",
-    designedFor: "Reservations & visibility",
+    description: "Elegant design with menu highlights",
+    designedFor: "Reservations & online orders",
     image: demoRestaurant,
   },
   {
-    id: "realtor-site",
-    title: "Montreal Home Finder",
-    industry: "Real Estate",
-    description: "Sophisticated listing showcase",
-    designedFor: "Lead generation",
-    image: demoRealestate,
+    id: "fitness-studio",
+    title: "Peak Performance Physical Therapy",
+    industry: "Fitness",
+    description: "Dynamic design with products",
+    designedFor: "Memberships & products",
+    image: demoFitness,
   },
 ];
 
@@ -72,7 +36,7 @@ const WorkHighlightsSection = () => {
           subtitle="These are demo concepts showcasing the quality and variety of websites we build. Your project could look this good."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
           {demoProjects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -82,12 +46,12 @@ const WorkHighlightsSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group bg-card rounded-2xl border border-border overflow-hidden card-hover"
             >
-              {/* Image */}
-              <div className="relative aspect-[4/3] bg-muted overflow-hidden">
+              {/* Image (UPDATED TO BE MORE "ZOOMED OUT") */}
+              <div className="relative aspect-[4/3] bg-muted overflow-hidden flex items-center justify-center">
                 <img
                   src={project.image}
                   alt={`${project.title} - Demo concept`}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
                 <div className="absolute top-3 left-3">
@@ -99,7 +63,9 @@ const WorkHighlightsSection = () => {
 
               {/* Content */}
               <div className="p-5">
-                <Badge variant="secondary" className="mb-2 text-xs">{project.industry}</Badge>
+                <Badge variant="secondary" className="mb-2 text-xs">
+                  {project.industry}
+                </Badge>
                 <h3 className="font-heading text-lg font-bold text-foreground mb-1">
                   {project.title}
                 </h3>

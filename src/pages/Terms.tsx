@@ -3,15 +3,15 @@ import { Helmet } from "react-helmet-async";
 
 const Terms = () => (
   <>
-    <Helmet><title>Terms of Service | NorthPeak Websites</title></Helmet>
+    <Helmet><title>Terms of Service | MyWebMake Websites</title></Helmet>
     <Layout>
       <section className="pt-32 pb-16 bg-primary text-primary-foreground">
-        <div className="container-wide"><h1 className="font-heading text-4xl font-bold">Terms of Service</h1><p className="text-primary-foreground/80 mt-2">Last updated: January 2024</p></div>
+        <div className="container-wide"><h1 className="font-heading text-4xl font-bold">Terms of Service</h1><p className="text-primary-foreground/80 mt-2">Last updated: December 2025</p></div>
       </section>
       <section className="section-padding bg-background">
         <div className="container-narrow prose prose-lg max-w-none">
           <h2>Services</h2>
-          <p>NorthPeak Websites provides web design, development, and related digital services. Specific deliverables and timelines are outlined in individual project proposals.</p>
+          <p>MyWebMake Websites provides web design, development, and related digital services. Specific deliverables and timelines are outlined in individual project proposals.</p>
           <h2>Payment Terms</h2>
           <p>Payment terms are specified in each project proposal. Generally, we require a deposit to begin work, with remaining payments due at project milestones.</p>
           <h2>Client Responsibilities</h2>
@@ -23,7 +23,7 @@ const Terms = () => (
           <h2>Limitation of Liability</h2>
           <p>Our liability is limited to the amount paid for services. We are not liable for indirect, incidental, or consequential damages.</p>
           <h2>Contact</h2>
-          <p>For questions about these terms, contact us at aravsahni7@gmail.com.</p>
+          <p>For questions about these terms, contact us at mywebmake0.gmail.com.</p>
         </div>
       </section>
     </Layout>

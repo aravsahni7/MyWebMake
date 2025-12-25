@@ -21,7 +21,6 @@ const Footer = () => {
     { name: "Services", href: "/services" },
     { name: "Process", href: "/process" },
     { name: "Work", href: "/work" },
-    { name: "Blog", href: "/blog" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
     { name: "Get a Quote", href: "/quote" },
@@ -35,46 +34,22 @@ const Footer = () => {
 
   return (
     <footer className="bg-primary text-primary-foreground">
-      {/* Newsletter Section */}
-      <div className="border-b border-primary-foreground/10">
-        <div className="container-wide py-12 md:py-16">
-          <div className="max-w-2xl mx-auto text-center">
-            <h3 className="font-heading text-2xl md:text-3xl font-bold mb-3">
-              Get Local Growth Tips
-            </h3>
-            <p className="text-primary-foreground/70 mb-6">
-              Practical website and SEO tips for small businesses. No spam, just actionable advice.
-            </p>
-            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50 focus:border-accent"
-                required
-              />
-              <Button type="submit" variant="accent" className="shrink-0">
-                Subscribe
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-            </form>
-          </div>
-        </div>
-      </div>
-
       {/* Main Footer */}
       <div className="container-wide py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
-                <span className="text-accent-foreground font-heading font-bold text-xl">N</span>
+              <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center overflow-hidden">
+                <img
+                  src="/src/assets/ChatGPT Image Dec 24, 2025, 08_00_51 AM.png"
+                  alt="Logo"
+                  className= "w-full h-full object-cover rounded-lg"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-heading font-bold text-lg leading-tight">
-                  NorthPeak
+                MyWebMake
                 </span>
                 <span className="text-xs text-primary-foreground/60 -mt-0.5">
                   Websites
@@ -188,7 +163,7 @@ const Footer = () => {
         <div className="container-wide py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-primary-foreground/60 text-sm text-center md:text-left">
-              © {new Date().getFullYear()} NorthPeak Websites. All rights reserved.
+              © {new Date().getFullYear()} MyWebMake Websites. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
               {legalLinks.map((link) => (

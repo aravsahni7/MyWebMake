@@ -12,7 +12,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = { G
 const Services = () => (
   <>
     <Helmet>
-      <title>Our Services | NorthPeak Websites</title>
+      <title>Our Services | MyWebMake Websites</title>
       <meta name="description" content="Website design, local SEO, landing pages, e-commerce, and maintenance for small businesses. Get a custom quote today." />
     </Helmet>
     <Layout>

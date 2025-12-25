@@ -8,7 +8,7 @@ import { Helmet } from "react-helmet-async";
 const FAQ = () => (
   <>
     <Helmet>
-      <title>FAQ | NorthPeak Websites</title>
+      <title>FAQ | MyWebMake Websites</title>
       <meta name="description" content="Answers to common questions about our web design services, pricing, timelines, and process." />
     </Helmet>
     <Layout>

@@ -1,18 +1,18 @@
 // NorthPeak Websites - Site Data (CMS-like editable structure)
 
 export const siteConfig = {
-  name: "NorthPeak Websites",
+  name: "MyWebMake Websites",
   tagline: "Built to rank. Built to sell.",
   description: "We build high-converting websites that make small businesses look legit, rank locally, and generate leads—without hassle.",
-  email: "aravsahni7@gmail.com",
-  phone: "5145890565",
-  phoneFormatted: "(514) 589-0565",
+  email: "mywebmake0@gmail.com",
+  phone: "4385207931",
+  phoneFormatted: "(438) 520-7931",
   location: "Montreal (MTL)",
   serviceArea: "Based in Montreal (MTL) • Serving clients online across Canada",
-  bookingUrl: "https://www.google.com",
+  bookingUrl: "https://calendar.app.google/mRDbY28SKnRGNa1B6",
   social: {
     instagram: "@aravsahni7",
-    linkedin: "@aravsahni7",
+    linkedin: "@aravsahni",
   },
   ctas: {
     primary: "Book a Free 15-Min Call",

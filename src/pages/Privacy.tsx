@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 
 const Privacy = () => (
   <>
-    <Helmet><title>Privacy Policy | NorthPeak Websites</title></Helmet>
+    <Helmet><title>Privacy Policy | MyWebMake Websites</title></Helmet>
     <Layout>
       <section className="pt-32 pb-16 bg-primary text-primary-foreground">
         <div className="container-wide"><h1 className="font-heading text-4xl font-bold">Privacy Policy</h1><p className="text-primary-foreground/80 mt-2">Last updated: January 2024</p></div>
@@ -19,9 +19,9 @@ const Privacy = () => (
           <h2>Data Security</h2>
           <p>We implement reasonable security measures to protect your personal information. However, no method of transmission over the internet is 100% secure.</p>
           <h2>Your Rights</h2>
-          <p>You may request access to, correction of, or deletion of your personal information by contacting us at aravsahni7@gmail.com.</p>
+          <p>You may request access to, correction of, or deletion of your personal information by contacting us at mywebmake0@gmail.com.</p>
           <h2>Contact</h2>
-          <p>For privacy-related questions, contact us at aravsahni7@gmail.com.</p>
+          <p>For privacy-related questions, contact us at mywebmake0@gmail.com.</p>
         </div>
       </section>
     </Layout>

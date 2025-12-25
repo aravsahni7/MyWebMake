@@ -10,12 +10,12 @@ import Process from "./pages/Process";
 import Work from "./pages/Work";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Blog from "./pages/Blog";
 import FAQ from "./pages/FAQ";
 import Quote from "./pages/Quote";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "./components/ScrollToTop"; // Import ScrollToTop
 
 const queryClient = new QueryClient();
 
@@ -26,6 +26,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop /> {/* Add ScrollToTop here */}
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/services" element={<Services />} />
@@ -33,7 +34,6 @@ const App = () => (
             <Route path="/work" element={<Work />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/blog" element={<Blog />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/quote" element={<Quote />} />
             <Route path="/privacy" element={<Privacy />} />
