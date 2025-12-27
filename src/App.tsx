@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import Process from "./pages/Process";
@@ -26,8 +27,8 @@ const App = () => (
         <Toaster />
         <Sonner />
 
-        {/* ✅ GitHub Pages project site basename */}
-        <BrowserRouter basename="/MyWebMake">
+        {/* ✅ Works for BOTH custom domain (/) and GitHub project path (/MyWebMake/) */}
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
